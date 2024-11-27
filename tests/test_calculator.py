@@ -4,6 +4,7 @@ from src.calculator import FinanceCalculator
 def test_add_expense():
     calc = FinanceCalculator()
     assert calc.add_expense(100.0, "Food") == True
+    assert calc.add_expense(-50.0, "Invalid") == False
     assert calc.add_expense("b", "Invalid") == False
     assert len(calc.expenses) == 1
     assert calc.expenses[0]["amount"] == 100.0
@@ -43,4 +44,5 @@ def test_get_expenses_by_category():
     calc.add_expense(200.0, "Rent")
     categories = calc.get_expenses_by_category()
     assert categories["Food"] == 150.0
+    assert categories["Rent"] == 200.0
     assert categories["Rent"] == 200.0
