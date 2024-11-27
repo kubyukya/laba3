@@ -5,6 +5,8 @@ class FinanceCalculator:
 
     def add_expense(self, amount: float, category: str) -> bool:
         """Add an expense transaction"""
+        if not isinstance(amount, (int, float)):
+            return False
         if amount <= 0:
             return False
         self.expenses.append({"amount": amount, "category": category})
