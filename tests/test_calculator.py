@@ -45,4 +45,4 @@ def test_get_expenses_by_category():
     categories = calc.get_expenses_by_category()
     assert categories["Food"] == 150.0
     assert categories["Rent"] == 200.0
-    assert categories["Rent"] == 200.0
+    #assert categories["Rent"] == 200.0
